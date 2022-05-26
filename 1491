@@ -1,0 +1,18 @@
+class Solution {
+public:
+    double average(vector<int>& salary) {
+        int max = INT_MIN;
+        int min = INT_MAX;
+        int i = 0;
+        double sum = 0;
+        double avg = 0;
+        
+        // for condition should not end at i<=salary.size() it cause buffer overflow
+        for(i; i < salary.size() ;i++){
+            if(salary[i] > max) max = salary[i];
+            if(salary[i] < min) min = salary[i];
+            sum = sum + salary[i];
+        }
+        return avg = (sum - max - min)/(salary.size()-2); 
+    }
+};
