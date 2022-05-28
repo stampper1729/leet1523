@@ -1,0 +1,51 @@
+class Solution {
+public:
+    
+    int sum;
+    int it;
+    int a,b,c;
+    int max;
+    
+    int largestPerimeter(vector<int>& nums) {
+        
+        sort(nums.begin(),nums.end());
+        it = nums.size()-1;
+        max = nums[it]; 
+        
+        c = max;
+        b = nums[it-1];
+        a = nums[it-2];
+        
+        // last 3 members of vector is the same value
+        if(a == b && b == c) return a+b+c; 
+        
+        //smallest vector to be compare
+        if(nums.size() == 3 && c < a+b) return a+b+c;  
+        if(nums.size() == 3 && c >= a+b) return 0;
+            
+        
+        
+        // size bigger
+        if(nums.size() > 3 && c < a+b){
+            return a+b+c;
+        }    
+        
+        if(nums.size() >3 && c == a+b){
+            return 0;
+        }
+        
+        if(nums.size() >3 && a == b && c== a+b){
+            a = nums[it-3];
+            return a+b+c;
+        }
+       // if(nums.size()> 3 && c == a+b){
+       //     if(a==b) {
+       //         for(int j = it-3 ; j > 0 ; j--){
+       //             if(nums[j] != b) return nums[j]+b+c;
+       //         }
+       //     }   
+        //}
+        
+        else return 0;
+    }
+};
