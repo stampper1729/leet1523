@@ -6,3 +6,4 @@ public:
 };
 
 //bitset<32>(n) is to change integer to bitset then count() is a function to count bit 1 
+edited
