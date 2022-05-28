@@ -1,0 +1,8 @@
+class Solution {
+public:
+    int hammingWeight(uint32_t n) {
+        return bitset<32>(n).count();
+        }
+};
+
+//bitset<32>(n) is to change integer to bitset then count() is a function to count bit 1 
