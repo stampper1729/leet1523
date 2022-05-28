@@ -1,0 +1,50 @@
+class Solution {
+public: 
+    int result, prod, sum, u,t,h,th,tth;
+    
+    int subtractProductAndSum(int n) {
+    
+        //easiest case
+        if(n<10) return 0;
+        
+        //easy case 
+        if(n == 100000) return -1;
+        
+    
+        if(10 <= n && n < 100){
+            u = n%10;
+            t = (n%100 - u)/10;
+            return ((u*t) - (u+t));
+        }
+        
+        
+        if(100 <= n && n < 1000){
+            u = n%10; //234%10
+            t = (n%100 - u)/10;
+            h = (n%1000 - u - t*10)/100;
+            return ((u*t*h) - (u+t+h));
+        }
+        
+        
+        if(1000 <= n && n < 10000){
+            u = n%10;
+            t = (n%100 - u)/10;
+            h = (n%1000 - u - t*10)/100;
+            th = (n%10000 - u - t*10 - h*100)/1000;
+            return ((u*t*h*th) - (u+t+h+th));
+        }
+        
+        if(10000 <= n && n < 100000){
+            u = n%10;
+            t = (n%100 - u)/10;
+            h = (n%1000 - u - t*10)/100;
+            th = (n%10000 - u - t*10 - h*100)/1000;
+            tth = (n%100000 - u - t*10 - h*100 - tth*1000)/10000;
+            
+            return ((u*t*h*th*tth) - (u+t+h+th+tth));
+        }
+        
+           return 0;
+    }
+   
+};
