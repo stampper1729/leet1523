@@ -1,0 +1,31 @@
+Runtime: 0 ms, faster than 100.00% of C++ online submissions for Happy Number.
+Memory Usage: 5.9 MB, less than 63.09% of C++ online submissions for Happy Number.
+
+
+
+class Solution {
+public:
+    int a;
+    
+    bool isHappy(int n) {
+        if(n < 10){
+            if(n == 1 || n == 7) return true;
+        } 
+        
+       while(n >= 10){
+         int sum = 0;  
+         while(n != 0){  
+           a = n%10;
+           sum = sum + a*a; 
+           n = n/10; 
+         }
+        n = sum;
+        
+           if(sum < 10){
+            if(sum == 1 || sum == 7) return true;
+        } 
+           
+       } 
+        return false;
+    }
+};
