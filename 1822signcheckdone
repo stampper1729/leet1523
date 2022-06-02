@@ -4,6 +4,10 @@ Runtime: 14 ms, faster than 13.72% of C++ online submissions for Sign of the Pro
 Memory Usage: 10.3 MB, less than 43.84% of C++ online submissions for Sign of the Product of an Array.
 
 
+without sorting
+Runtime: 8 ms, faster than 55.77% of C++ online submissions for Sign of the Product of an Array.
+Memory Usage: 10.1 MB, less than 85.84% of C++ online submissions for Sign of the Product of an Array.
+
 class Solution {
 public:
     
